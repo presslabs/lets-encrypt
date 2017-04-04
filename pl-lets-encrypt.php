@@ -7,7 +7,7 @@
 * */
 
 function pl_acme_challenge() {
-	$oxygen_url = apply_filters( 'pl_acme_oxygen_url', 'https://o.presslabs.com' );
+	$oxygen_url = apply_filters( 'pl_acme_oxygen_url', 'https://api.presslabs.com/api' );
 	$oxygen_verify_cert = apply_filters( 'pl_acme_oxygen_verify_cert', true );
 	$challenge_url = "$oxygen_url/certificates/" . ltrim( $_SERVER['REQUEST_URI'], '/' );
 	$response = wp_remote_get( $challenge_url, array( 'sslverify' => $oxygen_verify_cert ) );
